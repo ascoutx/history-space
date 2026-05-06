@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="An immersive cinematic journey through humanity's exploration of space — from ancient philosophy to modern rocketry.">
+  <title>Beyond the Cradle — Humanity's Journey to the Stars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Barlow+Condensed:wght@600;700&family=Public+Sans:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="desktop-warning">
+    <div class="warning-content">
+      <div class="warning-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+          <line x1="8" y1="21" x2="16" y2="21" />
+          <line x1="12" y1="17" x2="12" y2="21" />
+        </svg>
+      </div>
+      <h2>Wide Screens Only</h2>
+      <p>This immersive cinematic experience is optimized for desktop displays. Please visit us on a larger screen to
+        begin your journey through the stars.</p>
+    </div>
+  </div>
+
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <nav id="timeline" class="timeline" aria-label="Section timeline">
+    <div class="timeline-line">
+      <div class="timeline-progress" id="timeline-progress"></div>
+    </div>
+    <a href="#section-awakening" class="timeline-marker" data-section="awakening"><span>Awakening</span></a>
+    <a href="#section-imagined" class="timeline-marker" data-section="imagined"><span>Early Visions</span></a>
+    <a href="#section-cosmism" class="timeline-marker" data-section="cosmism"><span>Cosmism</span></a>
+    <a href="#section-engineering" class="timeline-marker" data-section="engineering"><span>Engineering</span></a>
+    <a href="#section-race" class="timeline-marker" data-section="race"><span>Space Race</span></a>
+    <a href="#section-cinema" class="timeline-marker" data-section="culture"><span>Culture</span></a>
+    <a href="#section-music" class="timeline-marker" data-section="culture"><span>Music</span></a>
+    <a href="#section-quiet" class="timeline-marker" data-section="quiet"><span>Quiet Years</span></a>
+    <a href="#section-cooperation" class="timeline-marker" data-section="cooperation"><span>Cooperation</span></a>
+    <a href="#section-modern" class="timeline-marker" data-section="modern"><span>Modern Era</span></a>
+    <a href="#section-finale" class="timeline-marker" data-section="finale"><span>Finale</span></a>
+  </nav>
+
+  <section id="section-hero" class="section section-hero">
+    <canvas id="starfield"></canvas>
+    <canvas id="shooting-stars"></canvas>
+    <div class="hero-overlay"></div>
+    <img src="img/earth.jpg" class="hero-bg-img" alt="Earth from orbit">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-line">Why do humans</span>
+        <span class="hero-line">look at the <em>stars</em>?</span>
+      </h1>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <section id="section-awakening" class="section section-awakening">
+    <div class="section-header" data-animate>
+      <span class="section-label">00 / Awakening</span>
+      <h2 class="section-title">The Awakening</h2>
+      <p class="section-subtitle">Long before the rockets, humanity looked at the stars and began to map the infinite.
+      </p>
+    </div>
+
+    <div class="awakening-grid">
+      <div class="awakening-card" data-animate>
+        <div class="card-visuals">
+          <div class="scientist-portrait">
+            <img src="img/awakening_herodotus.jpg" alt="Herodotus" class="portrait-img">
+            <span class="img-label">The Observer</span>
+          </div>
+          <div class="scientist-work">
+            <img src="img/ancient-map.svg" alt="Ancient Map" class="work-img">
+            <span class="img-label">The Horizon</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <h3>Herodotus</h3>
+          <p>Looked at the horizon and saw the world not as a flat disc, but as a part of a larger, mysterious whole. He
+            documented the first attempts to understand our place in the geography of the heavens.</p>
+        </div>
+      </div>
+
+      <div class="awakening-card" data-animate>
+        <div class="card-visuals">
+          <div class="scientist-portrait">
+            <img src="img/awakening_copernicus.jpeg" alt="Copernicus" class="portrait-img">
+            <span class="img-label">The Disruptor</span>
+          </div>
+          <div class="scientist-work">
+            <img src="img/copernicus-scheme.svg" alt="Copernicus Scheme" class="work-img">
+            <span class="img-label">The System</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <h3>Nicolaus Copernicus</h3>
+          <p>Displaced us from the center. By placing the Sun at the heart of the system, he didn't just change
+            astronomy — he redefined the human perspective on existence.</p>
+        </div>
+      </div>
+
+      <div class="awakening-card" data-animate>
+        <div class="card-visuals">
+          <div class="scientist-portrait">
+            <img src="img/awakening_galileo.jpg" alt="Galileo" class="portrait-img">
+            <span class="img-label">The Visionary</span>
+          </div>
+          <div class="scientist-work">
+            <img src="img/galileo-moon.jpg" alt="Galileo Moon" class="work-img">
+            <span class="img-label">The Lens</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <h3>Galileo Galilei</h3>
+          <p>Built a lens to bridge the distance. The first to see the craters of the Moon and the moons of Jupiter,
+            proving that the heavens were not perfect, but physical worlds like our own.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="awakening-summary" data-animate>
+      <p class="awakening-conclusion">The universe was no longer a myth. It was a reality.</p>
+      <p class="awakening-finale">And then humanity began to dream beyond the sky.</p>
+    </div>
+  </section>
+
+  <div class="quote-break" data-animate>
+    <blockquote>
+      <p>"Two things fill the mind with ever new and increasing admiration and awe — the starry heavens above me and the
+        moral law within me."</p>
+      <cite>— Immanuel Kant</cite>
+    </blockquote>
+  </div>
+
+  <section id="section-imagined" class="section section-imagined">
+    <div class="section-header" data-animate>
+      <span class="section-label">01 / Imagination</span>
+      <h2 class="section-title">Imagined Space</h2>
+      <p class="section-subtitle">We imagined space before we reached it. Artists and dreamers laid the foundation for
+        the engineers.</p>
+    </div>
+    <div class="imagined-gallery">
+      <div class="gallery-track">
+        <div class="gallery-card retro" data-animate>
+          <div class="gallery-img-container clickable">
+            <img src="img/early_astronomy_illustration.jpg" alt="Planisphaerium Copernicanum"
+              class="gallery-img-content zoomable" loading="lazy">
+          </div>
+          <p class="gallery-caption">Planisphaerium Copernicanum — the celestial harmony of the 17th century.</p>
+        </div>
+        <div class="gallery-card retro" data-animate>
+          <div class="gallery-img-container clickable">
+            <img src="img/soviet_poster.jpg" alt="Cosmic Geometry" class="gallery-img-content zoomable" loading="lazy">
+          </div>
+          <p class="gallery-caption">The geometry of ambition — early avant-garde visions of the red star.</p>
+        </div>
+        <div class="gallery-card retro" data-animate>
+          <div class="gallery-img-container clickable">
+            <img src="img/melies_frame.jpg" alt="A Trip to the Moon 1902" class="gallery-img-content zoomable"
+              loading="lazy">
+          </div>
+          <p class="gallery-caption">Georges Méliès — the moment cinema turned the Moon into a destination.</p>
+        </div>
+        <div class="gallery-card retro" data-animate>
+          <div class="gallery-img-container clickable">
+            <img src="img/verne_illustration.jpg" alt="Jules Verne Vision" class="gallery-img-content zoomable"
+              loading="lazy">
+          </div>
+          <p class="gallery-caption">From literature to life — the domestic comfort of a lunar projectile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-break" data-animate>
+    <blockquote>
+      <p>"Imagination will often carry us to worlds that never were. But without it we go nowhere."</p>
+      <cite>— Carl Sagan</cite>
+    </blockquote>
+  </div>
+
+  <section id="section-cosmism" class="section section-cosmism">
+    <div class="section-header" data-animate>
+      <span class="section-label">02 / Philosophy</span>
+      <h2 class="section-title">Cosmism</h2>
+      <p class="section-subtitle">Inspired by the visions of fiction, the first scientists began to calculate the escape
+        from Earth.</p>
+    </div>
+    <div class="cosmism-grid">
+      <div class="thinker-card" data-animate>
+        <div class="thinker-portrait">
+          <img src="img/fyodorov.jpg" alt="Nikolai Fyodorov" class="portrait-img">
+        </div>
+        <div class="thinker-info">
+          <h3>Nikolai Fyodorov</h3>
+          <span class="thinker-years">1829 — 1903</span>
+          <p>Known as the 'Socrates of Moscow' and the father of Russian Cosmism. He proposed the 'Philosophy of the
+            Common Task,' arguing that humanity's supreme duty is the conquest of death through scientific advancement.
+            He was the first to realize that to accommodate the resurrected generations of the past, humanity must look
+            upward and colonize the stars. His radical synthesis of ethics and science provided the philosophical
+            impetus that drove the first rocket engineers to turn their gaze toward the heavens.</p>
+        </div>
+      </div>
+      <div class="thinker-card" data-animate>
+        <div class="thinker-portrait">
+          <img src="img/tsiolkovsky.jpg" alt="Konstantin Tsiolkovsky" class="portrait-img">
+        </div>
+        <div class="thinker-info">
+          <h3>Konstantin Tsiolkovsky</h3>
+          <span class="thinker-years">1857 — 1935</span>
+          <p>The 'Grandfather of Cosmonautics' who transformed spaceflight from a literary fantasy into a rigorous
+            scientific discipline. In 1903, he derived the Tsiolkovsky Rocket Equation, the fundamental law of rocketry
+            that dictates how vehicles accelerate in the vacuum of space. Nearly deaf and largely self-taught, he
+            pioneered the concepts of multi-stage 'rocket trains,' liquid propellant engines, and even rotating space
+            stations with artificial gravity. He saw the cosmos not as a void, but as a future home for a unified
+            humanity.</p>
+          <blockquote class="inline-quote">"Earth is the cradle of humanity, but one cannot live in a cradle forever."
+          </blockquote>
+        </div>
+      </div>
+      <div class="thinker-card" data-animate>
+        <div class="thinker-portrait">
+          <img src="img/vernadsky.jpg" alt="Vladimir Vernadsky" class="portrait-img">
+        </div>
+        <div class="thinker-info">
+          <h3>Vladimir Vernadsky</h3>
+          <span class="thinker-years">1863 — 1945</span>
+          <p>A visionary geochemist and mineralogist who fundamentally redefined our understanding of the planet. He
+            founded the theory of the Noosphere, arguing that human cognition and scientific activity have become a new
+            geological force, capable of transforming the entire Biosphere. His work on biogeochemical cycles laid the
+            foundation for modern ecology and Earth system science, providing the theoretical framework for
+            understanding how life—and intelligence—can exist and thrive within a planetary system and eventually beyond
+            it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-break" data-animate>
+    <blockquote>
+      <p>"The Earth is the cradle of humanity, but mankind cannot stay in the cradle forever."</p>
+      <cite>— Konstantin Tsiolkovsky, 1911</cite>
+    </blockquote>
+  </div>
+
+  <section id="section-engineering" class="section section-engineering">
+    <div class="section-header" data-animate>
+      <span class="section-label">03 / Engineering</span>
+      <h2 class="section-title">Engineering the Dream</h2>
+      <p class="section-subtitle">Behind every rocket, there is a human story.</p>
+    </div>
+    <div class="engineering-timeline vertical-timeline">
+      <div class="timeline-block" data-animate>
+        <div class="timeline-text">
+          <span class="timeline-year">1944</span>
+          <h3>The Inherited Fire</h3>
+          <p>The first man-made object to cross the Kármán line. The <span class="info-link">V-2 Rocket</span>,
+            developed in Peenemünde.</p>
+        </div>
+        <div class="timeline-visual">
+          <img src="img/a4.jpg" alt="A-4 Rocket Technical" class="eng-blueprint">
+        </div>
+      </div>
+
+      <div class="timeline-block" data-animate>
+        <div class="timeline-text">
+          <span class="timeline-year">1951</span>
+          <h3>Biological Frontier</h3>
+          <p>First successful suborbital flight of higher mammals. <span class="info-link">Dezik & Tsygan</span> proved
+            that life could survive the stresses of launch.</p>
+        </div>
+        <div class="timeline-visual">
+          <img src="img/Dezik-Tsygan.jpg" alt="Dezik and Tsygan" class="eng-blueprint">
+        </div>
+      </div>
+
+      <div class="timeline-block" data-animate>
+        <div class="timeline-text">
+          <span class="timeline-year">1954 — 1957</span>
+          <h3>The R-7 "Semyorka"</h3>
+          <p>Developed under Sergei Korolev, this rocket became the world's most reliable launch platform.</p>
+        </div>
+        <div class="timeline-visual">
+          <img src="img/R-7Semyorka.jpg" alt="R-7 Rocket Diagram" class="eng-blueprint">
+        </div>
+      </div>
+
+      <div class="timeline-block" data-animate>
+        <div class="timeline-text">
+          <span class="timeline-year">1957</span>
+          <h3>The First Signal</h3>
+          <p>On October 4, <strong>Sputnik 1</strong> became the first artificial satellite to orbit the Earth. Its
+            rhythmic 'beep-beep' was a victory of engineering that announced the birth of the Space Age to a stunned
+            world.</p>
+        </div>
+        <div class="timeline-visual">
+          <img src="img/sputnik.jpg" alt="Sputnik 1" class="eng-blueprint">
+        </div>
+      </div>
+
+      <div class="timeline-block" data-animate>
+        <div class="timeline-text">
+          <span class="timeline-year">1957</span>
+          <h3>Orbital Sacrifice</h3>
+          <p><span class="info-link">Laika</span> became the first living being to orbit Earth, proving that a living
+            passenger could survive launch into orbit.</p>
+        </div>
+        <div class="timeline-visual">
+          <img src="img/laika.jpg" alt="Laika in Sputnik-2" class="eng-blueprint">
+        </div>
+      </div>
+
+      <div class="timeline-block" data-animate>
+        <div class="timeline-text">
+          <span class="timeline-year">1960</span>
+          <h3>The Safe Return</h3>
+          <p><span class="info-link">Belka & Strelka</span> completed 17 orbits and returned safely, testing the full
+            recovery cycle.</p>
+        </div>
+        <div class="timeline-visual">
+          <img src="img/Belka-Strelka.jpg" alt="Belka and Strelka" class="eng-blueprint">
+        </div>
+      </div>
+
+      <div class="timeline-block" data-animate>
+        <div class="timeline-text">
+          <span class="timeline-year">1961</span>
+          <h3>The Human Element</h3>
+          <p>The selection of the "First Six" pilots. Extreme physical limits were dictated by the cramped <span
+              class="info-link">Vostok Cabin</span>.</p>
+        </div>
+        <div class="timeline-visual">
+          <img src="img/vostok-cabin.jpg" alt="Vostok Interior" class="eng-blueprint">
+        </div>
+      </div>
+
+      <div class="timeline-block" data-animate>
+        <div class="timeline-text" style="flex: 1; text-align: center;">
+          <span class="timeline-year">12.04.1961</span>
+          <h3>The Point of No Return</h3>
+          <p><span class="info-link">Yuri Gagarin</span> completed a single orbit in 108 minutes, marking the transition
+            of humanity into space.</p>
+        </div>
+        <div class="timeline-visual">
+          <img src="img/gagarin2.jpg" alt="Vostok Interior" class="eng-blueprint">
+        </div>
+      </div>
+    </div>
+
+    <div class="cinematic-video-container video-trigger" data-video="video/Gagarin_flight.mp4" data-animate
+      style="margin-bottom: 60px;">
+      <div class="video-preview-wrapper">
+        <img src="img/gagarin_flight.jpeg" alt="Gagarin Video Preview" class="cinematic-video-preview">
+        <div class="play-overlay">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+      </div>
+      <p class="video-caption">Historical footage of Vostok-1 mission and Gagarin's return.</p>
+    </div>
+
+    <div id="info-modal" class="modal-overlay" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close">close [×]</button>
+        <div class="modal-header">
+          <h3 id="modal-title">Subject Name</h3>
+        </div>
+        <div class="modal-body">
+          <div class="modal-image-container"><img id="modal-img" src="" alt="Technical visual" style="display:none;">
+          </div>
+          <p id="modal-desc">Details injected via JS.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="video-modal" class="modal-overlay video-modal" aria-hidden="true">
+      <div class="modal-content video-content">
+        <button class="modal-close">close [×]</button>
+        <div class="video-wrapper"><video id="modal-video" controls playsinline></video></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-break quote-break-armstrong" data-animate>
+    <blockquote>
+      <p>"Poyekhali!"</p>
+      <cite>— Yuri Gagarin, April 12, 1961</cite>
+    </blockquote>
+  </div>
+
+  <section id="section-korolev-hero" class="section-hero-story">
+    <div class="hero-story-grid">
+      <div class="hero-visual" data-animate>
+        <img src="img/korolev1.jpg" alt="Sergei Korolev" class="hero-vertical-img" style="cursor: default;">
+      </div>
+      <div class="hero-text-content" data-animate>
+        <span class="personal-note">My Personal Hero</span>
+        <h2>Sergei Korolev: The Chief Designer</h2>
+        <p>His journey began in the halls of the <strong>Kyiv Polytechnic Institute (KPI)</strong>, where a young
+          student's obsession with gliders and aviation first took root. But the path to the stars was paved with
+          unimaginable suffering.</p>
+        <p>In 1938, during the Great Purge, Korolev was arrested on false charges. He survived the brutal <strong>Kolyma
+            Gulag</strong>, working in gold mines where thousands perished. Later, he was moved to a 'Sharashka' — a
+          secret prison laboratory where he continued his engineering work behind bars.</p>
+        <p>Despite the broken health and the constant shadow of secrecy, he never lost his vision. As the <strong>'Chief
+            Designer'</strong>, he orchestrated the launch of Sputnik and sent Yuri Gagarin into orbit, proving that no
+          wall is too high for a mind that belongs to the stars.</p>
+      </div>
+    </div>
+    <div class="imagined-gallery" data-animate
+      style="margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px;">
+      <div class="gallery-track">
+        <div class="gallery-card">
+          <div class="gallery-img-container"><img src="img/korolev2.jpg" class="gallery-img-content zoomable"
+              alt="Korolev Archival 2"></div>
+          <p class="gallery-caption">Sergei Korolev as a child: with his mother Maria Nikolaevna (right) and grandmother
+            Maria Matveyevna.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img-container"><img src="img/korolev3.jpg" class="gallery-img-content zoomable"
+              alt="Korolev Archival 3"></div>
+          <p class="gallery-caption">Sergei Korolev during his studies at Bauman Moscow State Technical University.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img-container"><img src="img/korolev4.jpg" class="gallery-img-content zoomable"
+              alt="Korolev Archival 4"></div>
+          <p class="gallery-caption">Sergei Korolev with his wife Ksenia, June 1, 1932.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img-container"><img src="img/korolev5.jpg" class="gallery-img-content zoomable"
+              alt="Korolev Archival 5"></div>
+          <p class="gallery-caption">Sergei Korolev 1934.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img-container"><img src="img/korolev6.jpg" class="gallery-img-content zoomable"
+              alt="Korolev Archival 6"></div>
+          <p class="gallery-caption">Sergei Korolev's prison photo.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img-container"><img src="img/korolev7.jpg" class="gallery-img-content zoomable"
+              alt="Korolev Archival 7"></div>
+          <p class="gallery-caption">Sergei Korolev examines cosmonaut candidate Yuri Gagarin's Vostok spacecraft
+            control systems at the Cosmonaut Training Center on January 16, 1961..</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img-container"><img src="img/korolev8.jpg" class="gallery-img-content zoomable"
+              alt="Korolev Archival 8"></div>
+          <p class="gallery-caption">The first group of Soviet cosmonauts on vacation in Sochi. May 27, 1961.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img-container"><img src="img/korolev9.jpg" class="gallery-img-content zoomable"
+              alt="Korolev Archival 9"></div>
+          <p class="gallery-caption">Yuri Gagarin and Sergei Korolev in Yevpatoria, 1966.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-img-container"><img src="img/korolev10.jpg" class="gallery-img-content zoomable"
+              alt="Korolev Archival 9"></div>
+          <p class="gallery-caption">A commemorative photo of Sergei Korolev.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-race" class="section section-race">
+    <div class="section-header" data-animate>
+      <span class="section-label">04 / Confrontation</span>
+      <h2 class="section-title">The Space Race</h2>
+      <p class="section-subtitle">Space was a battlefield. And a stage.</p>
+    </div>
+    <div class="race-media-container">
+      <img src="img/spacerace.jpg" alt="Archival Space Race" class="race-img-content">
+    </div>
+    <div class="race-split">
+      <div class="race-side ussr-side" data-animate>
+        <div class="race-flag">USSR</div>
+        <ul class="race-milestones">
+          <li><strong>1957</strong> — Sputnik 1: First satellite</li>
+          <li><strong>1957</strong> — Laika: First animal in orbit</li>
+          <li><strong>1961</strong> — Gagarin: First human in space</li>
+          <li><strong>1963</strong> — <span class="info-link">Valentina Tereshkova</span>: First woman in space</li>
+          <li><strong>1965</strong> — <span class="info-link">Alexei Leonov</span>: First spacewalk</li>
+        </ul>
+      </div>
+      <div class="race-divider"><span>VS</span></div>
+      <div class="race-side usa-side" data-animate>
+        <div class="race-flag">USA</div>
+        <ul class="race-milestones">
+          <li><strong>1958</strong> — <span class="info-link">Explorer 1</span>: First US satellite</li>
+          <li><strong>1962</strong> — <span class="info-link">John Glenn</span>: First US orbital flight</li>
+          <li><strong>1965</strong> — <span class="info-link">Gemini</span>: Rendezvous in orbit</li>
+          <li><strong>1968</strong> — <span class="info-link">Apollo 8</span>: First to orbit the Moon</li>
+          <li><strong>1969</strong> — <strong>Apollo 11</strong>: First on the Moon</li>
+        </ul>
+      </div>
+    </div>
+    <div class="moon-landing" data-animate>
+      <div class="armstrong-profile">
+        <img src="img/armstrong.jpg" alt="Neil Armstrong" class="armstrong-img">
+        <div class="armstrong-info">
+          <h4>Neil Armstrong</h4>
+          <p>Commander of Apollo 11. The first human to step onto the lunar surface.</p>
+          <p class="armstrong-quote">"One small step" was the culmination of millennia of human curiosity.</p>
+        </div>
+      </div>
+      <div class="moon-date">July 20, 1969</div>
+      <h3>The Moon Landing</h3>
+      <p>Six hundred million people watched. Two men walked on another world.</p>
+      <div class="cinematic-video-container video-trigger" data-video="video/Armstrong_flight.mp4" data-animate
+        style="margin-top: 40px;">
+        <div class="video-preview-wrapper">
+          <img src="img/Armstrong_flight.jpg" alt="Armstrong Video Preview" class="cinematic-video-preview">
+          <div class="play-overlay"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg></div>
+        </div>
+        <p class="video-caption">Historical footage of the Apollo 11 lunar descent and the first steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-break quote-break-armstrong" data-animate>
+    <blockquote>
+      <p>"That's one small step for man, one giant leap for mankind."</p>
+      <cite>— Neil Armstrong, July 20, 1969</cite>
+    </blockquote>
+  </div>
+
+  <section id="section-cinema" class="section section-cinema">
+    <div class="section-header" data-animate>
+      <span class="section-label">05 / Cinema</span>
+      <h2 class="section-title">Space on Screen</h2>
+      <p class="section-subtitle">Two superpowers. Two visions of the cosmos.</p>
+    </div>
+    <div class="cinema-split">
+      <div class="cinema-block ussr-cinema" data-animate>
+        <div class="cinema-label">Soviet Union</div>
+        <h3>Philosophical Cinema</h3>
+        <p class="cinema-themes">Introspection · Loneliness · Human Consciousness</p>
+        <div class="cinema-cards">
+          <div class="cinema-card">
+            <div class="cinema-img-container"><video src="video/solaris.mp4" class="cinema-img-content" autoplay loop
+                muted playsinline poster="img/vernadsky.jpg"></video></div>
+            <h4>Solaris</h4>
+            <p>Andrei Tarkovsky, 1972</p>
+          </div>
+          <div class="cinema-card">
+            <div class="cinema-img-container"><video src="video/throughthorns.mp4" class="cinema-img-content" autoplay
+                loop muted playsinline poster="img/soviet_poster.jpg"></video></div>
+            <h4>Through the Thorns to the Stars</h4>
+            <p>Richard Viktorov, 1981</p>
+          </div>
+        </div>
+      </div>
+      <div class="cinema-block usa-cinema" data-animate>
+        <div class="cinema-label">United States</div>
+        <h3>Technological Cinema</h3>
+        <p class="cinema-themes">Scale · Technology · Visual Futurism</p>
+        <div class="cinema-cards">
+          <div class="cinema-card">
+            <div class="cinema-img-container"><video src="video/spaceodyssey.mp4" class="cinema-img-content" autoplay
+                loop muted playsinline poster="img/earth.jpg"></video></div>
+            <h4>2001: A Space Odyssey</h4>
+            <p>Stanley Kubrick, 1968</p>
+          </div>
+          <div class="cinema-card">
+            <div class="cinema-img-container"><video src="video/starwars.mp4" class="cinema-img-content" autoplay loop
+                muted playsinline poster="img/spacerace.jpg"></video></div>
+            <h4>Star Wars</h4>
+            <p>George Lucas, 1977</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-break" data-animate>
+    <blockquote>
+      <p>"The cosmos is within us. We are made of star-stuff. We are a way for the universe to know itself."</p>
+      <cite>— Carl Sagan, 1980</cite>
+    </blockquote>
+  </div>
+
+  <section id="section-music" class="section section-music">
+    <div class="section-header" data-animate>
+      <span class="section-label">06 / Sound</span>
+      <h2 class="section-title">Music & Aesthetics</h2>
+    </div>
+    <div class="music-grid">
+      <div class="music-card" data-audio="Audio/Kraftwerk.mp3" data-animate>
+        <div class="vinyl-record">
+          <div class="vinyl-grooves"></div>
+          <div class="vinyl-label">K</div>
+        </div>
+        <h3>Kraftwerk</h3>
+        <p>Electronic precision. Machine rhythm.</p>
+      </div>
+      <div class="music-card" data-audio="Audio/Jean-Michel.mp3" data-animate>
+        <div class="vinyl-record">
+          <div class="vinyl-grooves"></div>
+          <div class="vinyl-label">JMJ</div>
+        </div>
+        <h3>Jean-Michel Jarre</h3>
+        <p>Oxygène. Équinoxe. Synthesizers breathing.</p>
+      </div>
+      <div class="music-card" data-audio="Audio/Siberiade.mp3" data-animate>
+        <div class="vinyl-record">
+          <div class="vinyl-grooves"></div>
+          <div class="vinyl-label">SW</div>
+        </div>
+        <h3>Sovietwave</h3>
+        <p>Nostalgia + cosmos + melancholy.</p>
+      </div>
+      <div class="music-card" data-audio="Audio/Miami-nights.mp3" data-animate>
+        <div class="vinyl-record">
+          <div class="vinyl-grooves"></div>
+          <div class="vinyl-label">RF</div>
+        </div>
+        <h3>Synthwave Revival</h3>
+        <p>Neon grids. Chrome reflections.</p>
+      </div>
+    </div>
+    <div class="waveform-container" data-animate>
+      <div class="waveform" id="waveform"></div>
+    </div>
+  </section>
+
+  <section id="section-quiet" class="section section-quiet">
+    <div class="quiet-content" data-animate>
+      <span class="section-label">07 / Transition</span>
+      <h2 class="quiet-title">The Quiet Years</h2>
+      <p class="quiet-period">1980s — 2000s</p>
+      <p class="quiet-text">Space didn't stop being explored—it became the invisible infrastructure of our modern world.
+      </p>
+    </div>
+  </section>
+
+  <div class="quote-break" data-animate>
+    <blockquote>
+      <p>"The dream didn't die. It went quiet."</p>
+      <cite></cite>
+    </blockquote>
+  </div>
+
+  <section id="section-cooperation" class="section section-cooperation">
+    <div class="section-header" data-animate>
+      <span class="section-label">07.5 / Cooperation</span>
+      <h2 class="section-title">A Shared Orbit</h2>
+      <p class="section-subtitle">The bitter rivalry gave way to collaboration.</p>
+    </div>
+    <div class="cooperation-grid">
+      <div class="coop-card" data-animate>
+        <div class="coop-img-container"><img src="img/Apollo-Soyuz.jpg" alt="Apollo-Soyuz" class="coop-img"></div>
+        <h3>Apollo-Soyuz</h3>
+        <p class="coop-date">1975</p>
+        <p>Two former enemies shook hands in space.</p>
+      </div>
+      <div class="coop-card" data-animate>
+        <div class="coop-img-container"><img src="img/mir.jpg" alt="Mir Space Station" class="coop-img"></div>
+        <h3>Mir Space Station</h3>
+        <p class="coop-date">1986 — 2001</p>
+        <p>The first continuously inhabited long-term research station.</p>
+      </div>
+      <div class="coop-card" data-animate>
+        <div class="coop-img-container"><img src="img/iss.jpeg" alt="International Space Station" class="coop-img">
+        </div>
+        <h3>ISS</h3>
+        <p class="coop-date">1998 — Present</p>
+        <p>A testament to what humanity can achieve together.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-modern" class="section section-modern">
+    <div class="section-header" data-animate>
+      <span class="section-label">08 / Renaissance</span>
+      <h2 class="section-title">The Dream Returns</h2>
+    </div>
+    <div class="cinematic-video-container video-trigger" data-video="video/spacex_flight.mp4" data-animate
+      style="margin-top: 40px;">
+      <div class="video-preview-wrapper">
+        <img src="img/musk_spacex.jpg" alt="Armstrong Video Preview" class="cinematic-video-preview">
+        <div class="play-overlay"><svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg></div>
+      </div>
+      <p class="video-caption">The Future is Here: Vertical landing of the Falcon 9 orbital class rocket.
+        A revolution in engineering that made space accessible.
+      </p>
+    </div>
+    <div class="modern-stats" data-animate>
+      <div class="stat-card">
+        <div class="stat-number" data-count="200">0</div>
+        <div class="stat-label">Falcon 9 Landings</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-count="6">0</div>
+        <div class="stat-label">Starship Test Flights</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-count="12">0</div>
+        <div class="stat-label">Private Space Companies</div>
+      </div>
+    </div>
+    <div class="modern-grid expanded-grid">
+      <div class="modern-card" data-animate>
+        <div class="modern-card-body">
+          <div class="modern-card-img"><img src="img/spacex.jpg" alt="SpaceX Starship"></div>
+          <div class="modern-card-info">
+            <h3>SpaceX & Starship</h3>
+            <p>SpaceX has fundamentally changed the economics of space. Starship, the most powerful rocket ever built,
+              is designed for rapid and full reusability. This paradigm shift will make life multi-planetary, enabling
+              large-scale colonization of Mars and the Moon by reducing launch costs to historic lows.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modern-card" data-animate>
+        <div class="modern-card-body">
+          <div class="modern-card-img"><img src="img/axiom.jpeg" alt="Commercial Space Stations"></div>
+          <div class="modern-card-info">
+            <h3>Commercial Low Earth Orbit</h3>
+            <p>The era of government monopoly in orbit is ending. Axiom Space is building the first commercial module
+              for the ISS, paving the way for independent private space stations. These habitats will serve as hubs for
+              research, zero-gravity manufacturing, and the next wave of orbital tourism.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modern-card" data-animate>
+        <div class="modern-card-body">
+          <div class="modern-card-img"><img src="img/artemis.webp" alt="Artemis Program"></div>
+          <div class="modern-card-info">
+            <h3>Artemis: The Moon and Beyond</h3>
+            <p>NASA's Artemis program is a global effort to establish a sustainable human presence on the Moon. Through
+              the Gateway station and lunar base camps, humanity is learning how to live and work on another world,
+              preparing for the ultimate leap to the Martian surface.</p>
+          </div>
+        </div>
+      </div>
+      <div class="modern-card" data-animate>
+        <div class="modern-card-body">
+          <div class="modern-card-img"><img src="img/blue-origin.webp" alt="Blue Origin New Glenn"></div>
+          <div class="modern-card-info">
+            <h3>Blue Origin: Road to Space</h3>
+            <p>Blue Origin is building a road to space so that millions of people can live and work there for the
+              benefit of Earth. With New Glenn, a massive reusable launch vehicle, and the Blue Moon lunar lander, Jeff
+              Bezos's company is focusing on creating the infrastructure needed for a robust orbital economy and
+              preserving our home planet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section-finale" class="section-footer">
+    <canvas id="starfield-footer"></canvas>
+    <div class="footer-content">
+      <div class="quote-break" data-animate style="min-height: auto; padding: 0; background: none;">
+        <blockquote>
+          <p>"Mars is there, waiting to be reached."</p><cite>— Buzz Aldrin —</cite>
+        </blockquote>
+      </div>
+      <div class="footer-info" data-animate>
+        <p class="author-name">Victor Ölberg</p>
+        <p class="guidance">Under the guidance of <span
+            style="font-family: sans-serif; font-weight: 800 !important;">Serhiy Choliy</span></p>
+        <p class="author-email">bdxwei@gmail.com</p>
+        <p class="disclaimer">This project is non-commercial and created for educational purposes.</p>
+      </div>
+      <div class="footer-branding" data-animate><img src="img/KPI.png" alt="KPI Logo" class="kpi-logo"></div>
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous image"><svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg></button>
+    <div class="lightbox-content"><img src="" alt="" id="lightbox-img">
+      <div class="lightbox-counter"><span id="current-idx">1</span> / <span id="total-idx">4</span></div>
+    </div>
+    <button class="lightbox-nav lightbox-next" aria-label="Next image"><svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg></button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
