@@ -115,7 +115,7 @@
   const markers = Array.from(document.querySelectorAll('.timeline-marker'));
 
   markers.forEach(marker => {
-    marker.addEventListener('click', function(e) {
+    marker.addEventListener('click', function (e) {
       e.preventDefault();
       const targetId = this.getAttribute('href').substring(1);
       const targetSection = document.getElementById(targetId);
@@ -132,7 +132,7 @@
     let activeMarker = null;
     let activeIndex = -1;
     let sectionProgress = 0;
-    
+
     for (let i = markers.length - 1; i >= 0; i--) {
       const id = markers[i].getAttribute('href').substring(1);
       const section = document.getElementById(id);
@@ -160,12 +160,12 @@
     if (activeMarker && progressLine) {
       const markerTop = activeMarker.offsetTop + (activeMarker.offsetHeight / 2);
       let nextMarkerTop = markerTop;
-      
+
       if (activeIndex < markers.length - 1) {
         const nextMarker = markers[activeIndex + 1];
         nextMarkerTop = nextMarker.offsetTop + (nextMarker.offsetHeight / 2);
       }
-      
+
       const linePx = markerTop + (nextMarkerTop - markerTop) * sectionProgress;
       progressLine.style.height = `${linePx}px`;
     } else if (progressLine) {
